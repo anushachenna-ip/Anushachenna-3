@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+
+public class TaxPerson {
+
+	public static void main( String[] args )
+
+	{
+		Scanner input = new Scanner( System.in);
+		String amount;                
+
+		double totalStateTax;   
+		double basicneedTax=0.01;   
+		double luxuryTax=0.11;   
+		double totalSaleAmount=0.00;   
+		double amt;
+		int type=0;
+
+
+		System.out.println("Enter the amount of your purchase :");
+
+		amount = input.nextLine();
+
+		amt = Double.parseDouble(amount);
+
+		System.out.println("Enter the type of your purchase \n 1.basic need \n 2.luxury");
+
+		type=input.nextInt();
+		if(type==1)
+		{
+			totalStateTax = amt * basicneedTax;
+
+			totalSaleAmount = amt + totalStateTax;
+		}
+		else if(type==2)
+		{
+			totalStateTax = amt *luxuryTax;
+
+			totalSaleAmount = amt + totalStateTax;
+		}
+		System.out.println("The total  cost of an item including tax is " + totalSaleAmount+ "cents");
+	}
+
+}
